@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="score.css" />
+    <title>Kết quả</title>
+  </head>
+  <body>
+    <h1>Chúc mừng bạn đã hoàn thành bài thi</h1>
+    <h2>Điểm của bạn là</h2>
+    <p id="score"></p>
+    <button id="viewResultBtn">Xem kết quả</button>
+    <script>
+      const reviewButton = document.getElementById("viewResultBtn");
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = urlParams.get("score");
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = score;
+      scoreElement.classList.add("score-circle");
+
+      reviewButton.addEventListener("click", function () {
+        // Chuyển về trang đã làm bài
+        window.location.href = "review.html";
+      });
+    </script>
+  </body>
+</html>
